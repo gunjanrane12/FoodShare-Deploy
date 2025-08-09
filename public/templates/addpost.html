@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food Post</title>
+    <link rel="stylesheet" href="/static/addpost.css"> <!-- Updated CSS file link -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FoodShare</h1>
+                <p>Share Food, Share Hope</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h1>Add Food Post</h1>
+        <form id="addFoodPostForm" action="/api/food/add" method="POST">
+            <label for="food_title">Food Title:</label>
+            <input type="text" id="food_title" name="food_title" required>
+
+            <label for="meal_quantity">Meal Quantity:</label>
+            <input type="number" id="meal_quantity" name="meal_quantity" required>
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="datetime-local" id="expiry" name="expiry" required>
+
+            <button type="submit">Submit</button>
+            <button type="button" id="cancelBtn">Cancel</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="/scripts/addpostscript.js"></script>
+</body>
+
+</html>

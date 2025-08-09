@@ -1,0 +1,144 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; 
+    color: #333; 
+    line-height: 1.6;
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container for logo and tagline */
+.logo-tagline-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.site-title {
+    font-size: 36px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #FFAA30;
+    margin-top: 5px; 
+}
+
+.header-nav {
+    margin-left: auto; 
+}
+
+.header-nav a {
+    background-color: #FFAA30; 
+    color: #3e3e3e;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-nav a:hover {
+    background-color: #FF8F00; 
+    transform: scale(1.05);
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 40px 20px;
+    text-align: left; 
+    flex-grow: 1; 
+    background: url('../foodshare.jpg') no-repeat center center/cover; /* Background image matching Home page */
+}
+
+.about-section h2 {
+    font-size: 32px;
+    color: #FF8F00; 
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #151111;
+    margin-bottom: 20px;
+    /*background: rgba(27, 19, 19, 0.8); /* Light background behind text for readability */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Sticky footer */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #FFAA30; /* Warm Amber */
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+}

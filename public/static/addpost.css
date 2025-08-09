@@ -1,0 +1,125 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    height: 100%;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9);
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #FFAA30;
+    margin: 0;
+}
+
+/* Main Section */
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 32px;
+    color: #2C6E49;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin: 15px 0 5px 0;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"] {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #FFAA30;
+    color: #3e3e3e;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #FF8F00;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #FFAA30;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}

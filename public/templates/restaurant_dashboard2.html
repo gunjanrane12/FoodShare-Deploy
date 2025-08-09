@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Restaurant Dashboard</title>
+    <link rel="stylesheet" href="../static/restaurant_dashboard2.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FoodShare</h1>
+                <p>Share Food, Share Hope</p>
+            </div>
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <span class="welcome">Welcome, Restaurant</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Dashboard and Sidebar -->
+    <div class="dashboard-container">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        
+        <div class="sidebar" id="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <!-- Meal Container -->
+            <div class="meal-container">
+                <h2>Today's Meals</h2>
+                <div class="meal">
+                    <h3>Meal Name 1</h3>
+                    <p>Description of Meal 1</p>
+                    <p>Quantity: 10</p>
+                </div>
+                <div class="meal">
+                    <h3>Meal Name 2</h3>
+                    <p>Description of Meal 2</p>
+                    <p>Quantity: 5</p>
+                </div>
+                <div class="meal">
+                    <h3>Meal Name 3</h3>
+                    <p>Description of Meal 3</p>
+                    <p>Quantity: 20</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

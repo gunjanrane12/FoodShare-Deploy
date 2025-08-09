@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FoodShare</h1>
+                <p>Share Food, Share Hope</p>
+            </div>
+            <nav class="center-nav">
+                <ul class="header-links">
+                    <li><a href="home.html" class="btn">Home</a></li> <!-- Updated Home button to look like the login button -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <h2>Login to FoodShare</h2>
+        <form action="/api/login" method="POST" id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../scripts/loginscript.js"></script>
+</body>
+
+</html>

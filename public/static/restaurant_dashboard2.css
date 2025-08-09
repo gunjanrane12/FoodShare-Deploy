@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background-color: #004d00; /* Darker green */
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: white;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #c9e4c5;
+    margin: 5px 0 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #c9e4c5; /* Light green on hover */
+}
+
+.welcome {
+    margin-left: 20px;
+    font-weight: bold;
+    color: #c9e4c5;
+}
+
+/* Dashboard and Sidebar */
+.dashboard-container {
+    display: flex;
+    flex: 1;
+}
+
+.toggle-btn {
+    background-color: #004d00;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 100px;
+}
+
+.sidebar {
+    background-color: #004d00;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 100px; /* Adjust to be below header */
+    left: 0;
+    padding-top: 30px;
+    display: none;
+    flex-direction: column;
+}
+
+.sidebar.show {
+    display: flex;
+}
+
+.sidebar h2 {
+    color: #c9e4c5;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    color: #c9e4c5;
+}
+
+.main-content {
+    margin-left: 270px; /* Add space for the sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+.main-content h2 {
+    font-size: 32px;
+    color: #c9e4c5;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Meal Container */
+.meal-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.meal-container h2 {
+    font-size: 28px;
+    color: #c9e4c5;
+    margin-bottom: 20px;
+}
+
+.meal {
+    background-color: #333;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.meal h3 {
+    font-size: 22px;
+    color: #c9e4c5;
+    margin: 0 0 10px;
+}
+
+.meal p {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #004d00;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

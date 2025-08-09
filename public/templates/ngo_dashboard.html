@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard</title>
+    <link rel="stylesheet" href="../static/ngo_dashboard.css"> <!-- Link to the updated CSS -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>FoodShare</h1>
+                <p>Share Food, Share Hope</p>
+            </div>
+            <div class="auth-buttons">
+                <button class="auth-button" onclick="window.location.href='home.html'">Home</button> <!-- Home button -->
+                <button class="auth-button" id="logoutButton">Logout</button> <!-- Logout button -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h1 id="welcomeMessage">Welcome, <span id="ngoName">NGO Name</span></h1> <!-- Dynamic NGO name -->
+
+        <h2>Available Food Posts</h2>
+        <div id="foodPostsOverview">
+            <!-- Food posts will be dynamically populated here -->
+        </div>
+
+        <!-- Modal for Posted By Details -->
+        <div id="detailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h4>Posted By Details</h4>
+                <div id="modalDetailsContent">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="/scripts/ngo_dashboard_script.js"></script> <!-- Updated script for toggle functionality -->
+</body>
+
+</html>

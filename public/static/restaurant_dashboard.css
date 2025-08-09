@@ -1,0 +1,212 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9);
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position:fixed;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.logo h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #FFAA30;
+    margin: 0;
+}
+
+/* Navigation Button Styles */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-button {
+    background-color: #FFAA30;
+    color: #3e3e3e;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+.auth-button:hover {
+    background-color: #FF8F00;
+    transform: scale(1.05);
+}
+
+/* Main Section */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #FFAA30;
+    color: #3e3e3e;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF8F00;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to right, #2C6E49, #A8D8B9);
+    color: #ffffff;
+    text-align: center;
+    /* padding: 20px 0; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #FFAA30;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#pastPostsOverview {
+    padding-bottom: 120px; /* Match this with the height of the footer */
+}
+
+/* Main Content Section */
+section {
+    padding: 20px;
+    padding-top: 140px; /* Account for fixed header */
+    padding-bottom: 120px; /* Account for fixed footer */
+    text-align: center;
+    background-color: #f5f5f5; /* Light background for better contrast */
+}
+
+/* Post Cards Layout */
+#pastPostsOverview {
+    display: grid; /* Using grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between posts */
+    padding-bottom: 120px;
+}
+
+/* Individual Post Card */
+.post-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Post Card Hover Effect */
+.post-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Post Title */
+.post-card h3 {
+    font-size: 24px;
+    color: #2C6E49; /* Consistent brand color */
+    margin-bottom: 10px;
+}
+
+/* Post Description */
+.post-card p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Button for Each Post */
+.post-card button {
+    background-color: #FFAA30;
+    color: #3e3e3e;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.post-card button:hover {
+    background-color: #FF8F00;
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+#welcomeMessage {
+    font-size: 36px;
+    color: #2C6E49; /* Match brand colors */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#welcomeMessage span {
+    color: #FFAA30; /* Accent color for restaurant name */
+}
+
+/* Reduce the Gap Between Header and Content */
+section {
+    padding: 20px;
+    padding-top: 100px; /* Reduced padding to bring the content closer to the fixed header */
+    padding-bottom: 120px; /* Maintain padding for the footer */
+}
+
+/* Styling for the Restaurant Name in the Welcome Message */
+#welcomeMessage span {
+    color: #FFAA30; /* Highlight the restaurant name with a different color */
+}
