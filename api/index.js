@@ -14,6 +14,15 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
+import { readFileSync } from "fs";
+import { join } from "path";
+
+export default function handler(req, res) {
+  const html = readFileSync(join(process.cwd(), "public/templates/index.html"), "utf8");
+  res.setHeader("Content-Type", "text/html");
+  res.send(html);
+}
+
 // ===== MySQL Pool (serverless-friendly) =====
 let pool;
 function getDB() {
