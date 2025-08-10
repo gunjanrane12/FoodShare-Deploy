@@ -16,7 +16,12 @@ app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
 app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use('/templates', express.static(path.join(__dirname, 'templates')));
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: 'process.env.SESSION_SECRET', resave: false, saveUninitialized: true }));
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { httpOnly: false }
+}));
 app.use(cors());
 
 // MySQL connection
