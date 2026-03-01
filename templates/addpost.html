@@ -1,53 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Food Post</title>
-    <link rel="stylesheet" href="/static/addpost.css"> <!-- Updated CSS file link -->
+    <meta name="description" content="Add a food post on FoodShare — Share your surplus food with NGOs near you.">
+    <title>Add Food Post — FoodShare</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/addpost.css">
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p>
+<body class="addpost-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-actions">
+                <a href="/templates/restaurant_dashboard.html" class="btn btn-ghost btn-sm">← Dashboard</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content Section -->
-    <main>
-        <h1>Add Food Post</h1>
-        <form id="addFoodPostForm" action="/api/food/add" method="POST">
-            <label for="food_title">Food Title:</label>
-            <input type="text" id="food_title" name="food_title" required>
+    <!-- Page Body -->
+    <main class="addpost-main">
+        <div class="addpost-card">
 
-            <label for="meal_quantity">Meal Quantity:</label>
-            <input type="number" id="meal_quantity" name="meal_quantity" required>
+            <div class="addpost-header">
+                <div class="addpost-icon">🍱</div>
+                <h1>Add Food Post</h1>
+                <p>Share details about surplus food available from your restaurant. NGOs in your city will be able to
+                    see and collect it.</p>
+            </div>
 
-            <label for="expiry">Expiry Date:</label>
-            <input type="datetime-local" id="expiry" name="expiry" required>
+            <form id="addFoodPostForm" action="/api/food/add" method="POST" class="addpost-form">
 
-            <button type="submit">Submit</button>
-            <button type="button" id="cancelBtn">Cancel</button>
-        </form>
+                <div class="form-group">
+                    <label for="food_title">Food Title</label>
+                    <input type="text" id="food_title" name="food_title" class="form-input"
+                        placeholder="e.g. Dal Makhani & Roti (30 servings)" required>
+                </div>
+
+                <div class="addpost-row">
+                    <div class="form-group">
+                        <label for="meal_quantity">Number of Meals</label>
+                        <input type="number" id="meal_quantity" name="meal_quantity" class="form-input"
+                            placeholder="e.g. 50" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry">Expiry / Pickup Deadline</label>
+                        <input type="datetime-local" id="expiry" name="expiry" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="addpost-actions">
+                    <button type="submit" class="btn btn-primary btn-full">📤 Submit Post</button>
+                    <button type="button" id="cancelBtn" class="btn btn-ghost btn-full">Cancel</button>
+                </div>
+
+            </form>
+
+            <div class="addpost-tip">
+                <span>💡</span>
+                <p>Tip: Add as many details as possible in the title so NGOs know exactly what food is available.</p>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="/scripts/addpostscript.js"></script>

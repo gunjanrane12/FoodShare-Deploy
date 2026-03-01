@@ -1,44 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - FoodShare</title>
+    <meta name="description"
+        content="About FoodShare — Our mission to connect restaurants and NGOs to fight food waste and hunger.">
+    <title>About Us — FoodShare</title>
+    <link rel="stylesheet" href="/static/global.css">
     <link rel="stylesheet" href="/static/about.css">
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo-tagline-container">
-                <h1 class="site-title">FoodShare</h1>
-                <p class="tagline">Share Food, Share Hope</p> <!-- Tagline directly below the logo -->
-            </div>
-            <nav class="header-nav">
-                <a href="/templates/home.html">Home</a>
-            </nav>
-        </div>
-    </header>
-    
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h2>About Us</h2>
-        <p>FoodShare was created with the aim of reducing food waste while helping those in need. Our platform connects restaurants with surplus food to NGOs and charities that can distribute the food to underserved communities. By bridging this gap, we ensure that excess food is used efficiently to fight hunger, rather than going to waste. The idea behind FoodShare is rooted in the belief that every meal matters, and no food should be discarded when it can provide hope to someone else. Our goal is to create a sustainable system that benefits both businesses and communities in need.</p>
-        <p>Our mission is simple: to make food donation easy, accessible, and impactful. Through FoodShare, we want to encourage restaurants and organizations to work together in creating a world where food is no longer wasted, but instead, used to its fullest potential. With every donation, we bring hope to the people who need it most and contribute to a brighter, more equitable future.</p>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-links">
+                <a href="/templates/home.html">Home</a>
+                <a href="/about.html" class="active">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <div class="navbar-actions">
+                <a href="/templates/login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="/templates/register.html" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-hero-bg"></div>
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="eyebrow">Our Story</div>
+                <h1>We Believe No Good<br>Food Should Go to Waste</h1>
+                <p class="about-hero-desc">FoodShare was built from a simple truth: restaurants throw away millions of
+                    meals while millions of people go hungry. We're here to bridge that gap.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="terms.html">Terms and Conditions</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-text">
+                    <div class="eyebrow">Why We Exist</div>
+                    <h2>Our Mission</h2>
+                    <p>FoodShare was created to reduce food waste while helping those in need. Our platform connects
+                        restaurants with surplus food to NGOs and charities that can distribute it to underserved
+                        communities.</p>
+                    <p>By bridging this gap, we ensure that excess food is used efficiently to fight hunger, rather than
+                        going to waste. We believe every meal matters, and no food should be discarded when it can
+                        provide hope to someone else.</p>
+                    <a href="/templates/register.html" class="btn btn-primary" style="margin-top:var(--space-5)">Join
+                        Our Mission</a>
+                </div>
+                <div class="mission-stats">
+                    <div class="mission-stat-card">
+                        <span class="mission-stat-num">1.3B</span>
+                        <span class="mission-stat-label">Tonnes of food wasted globally per year</span>
+                    </div>
+                    <div class="mission-stat-card">
+                        <span class="mission-stat-num">690M</span>
+                        <span class="mission-stat-label">People go hungry worldwide</span>
+                    </div>
+                    <div class="mission-stat-card mission-stat-primary">
+                        <span class="mission-stat-num">12,500+</span>
+                        <span class="mission-stat-label">Meals redistributed by FoodShare</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">What Drives Us</div>
+                <h2>Our Values</h2>
+                <p>Every feature we build and every decision we make is guided by these three pillars.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">♻️</div>
+                    <h3>Sustainability</h3>
+                    <p>We champion sustainable food practices and push for a future where food waste is the exception,
+                        not the norm.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Community</h3>
+                    <p>We believe in the power of community — restaurants, NGOs, and communities working together create
+                        lasting change.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Simplicity</h3>
+                    <p>Donating food should be easy and fast. We remove friction so restaurants can share surplus meals
+                        in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-orb"></div>
+                <div class="cta-content">
+                    <h2>Be Part of the Solution</h2>
+                    <p>Whether you run a restaurant or an NGO, your role in fighting hunger matters.</p>
+                    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                        <a href="/templates/register.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                        <a href="/contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-name">FoodShare</div>
+                    <p>Connecting restaurants with NGOs to reduce food waste and fight hunger.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-links-col">
+                        <h4>Navigate</h4>
+                        <a href="/templates/home.html">Home</a>
+                        <a href="/about.html">About Us</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Legal</h4>
+                        <a href="/templates/privacy.html">Privacy Policy</a>
+                        <a href="/templates/terms.html">Terms of Service</a>
+                        <a href="/templates/help.html">Help Centre</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <p>Made with ❤️ to fight hunger in India</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 
 </html>

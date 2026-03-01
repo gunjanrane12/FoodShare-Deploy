@@ -4,61 +4,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodShare - Combat Food Wastage</title>
-    <link rel="stylesheet" href="../static/home.css" type="text/css">
+    <meta name="description"
+        content="FoodShare — Connecting restaurants with surplus food to NGOs fighting hunger. Share food, share hope.">
+    <title>FoodShare — Share Food, Share Hope</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/home.css">
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-links">
+                <a href="/templates/home.html" class="active">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for donations or requests">
-                <button>Search</button>
-            </div>
-            <nav class="center-nav">
-                <ul class="below-search">
-                    <li><a href="/templates/home.html">Home</a></li>
-                    <li><a href="about.html">About Us</a>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <button class="auth-button" onclick="window.location.href='/templates/login.html'">Login</button>
-                <button class="auth-button" onclick="window.location.href='/templates/register.html'">Register</button>
+            <div class="navbar-actions">
+                <a href="/templates/login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="/templates/register.html" class="btn btn-primary btn-sm">Get Started</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Reduce Food Waste, Feed More People</h2>
-            <p>Join us in stopping food waste and helping those in need. Restaurants and NGOs can collaborate to distribute excess food efficiently.</p>
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                🌍 Fighting hunger, one meal at a time
+            </div>
+            <h1>
+                Turn Surplus Food<br>
+                Into <span class="text-gradient">Community Hope</span>
+            </h1>
+            <p class="hero-desc">FoodShare connects restaurants with excess meals to trusted NGOs and charities —
+                ensuring good food feeds people, not landfills.</p>
+            <div class="hero-actions">
+                <a href="/templates/register.html" class="btn btn-primary btn-lg">
+                    🚀 Join FoodShare
+                </a>
+                <a href="/about.html" class="btn btn-outline btn-lg">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card fc-1">🍱 <span>50 meals donated</span></div>
+            <div class="floating-card fc-2">✅ <span>Post accepted!</span></div>
+            <div class="floating-card fc-3">🏥 <span>NGO connected</span></div>
         </div>
     </section>
 
-    <!-- About Section
-    <section class="about">
-        <h2>About Us</h2>
-        <p>We connect restaurants and NGOs to help reduce food waste and support those in need.</p>
-    </section> -->
+    <!-- Stats Strip -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="12500">12,500+</span>
+                    <span class="stat-label">Meals Shared</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="380">380+</span>
+                    <span class="stat-label">Restaurants</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="140">140+</span>
+                    <span class="stat-label">NGO Partners</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="22">22</span>
+                    <span class="stat-label">Cities</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="terms.html">Terms and Conditions</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
+    <!-- How It Works -->
+    <section class="how-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">Simple Process</div>
+                <h2>How FoodShare Works</h2>
+                <p>Three simple steps connect surplus food with the people who need it most.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon step-icon-1">🍽️</div>
+                    <div class="step-num">01</div>
+                    <h3>Restaurant Posts</h3>
+                    <p>Register your restaurant and post details about surplus food — title, quantity, and expiry time.
+                    </p>
+                </div>
+                <div class="step-connector">→</div>
+                <div class="step-card">
+                    <div class="step-icon step-icon-2">🔔</div>
+                    <div class="step-num">02</div>
+                    <h3>NGO Discovers</h3>
+                    <p>NGOs in the same city browse available food posts and see restaurant contact details instantly.
+                    </p>
+                </div>
+                <div class="step-connector">→</div>
+                <div class="step-card">
+                    <div class="step-icon step-icon-3">🤝</div>
+                    <div class="step-num">03</div>
+                    <h3>Food Reaches People</h3>
+                    <p>The NGO collects the food and distributes it to those in need — zero food wasted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Is It For -->
+    <section class="audience-section">
+        <div class="container">
+            <div class="audience-grid">
+                <div class="audience-card audience-restaurant">
+                    <div class="audience-icon">🏪</div>
+                    <h3>For Restaurants</h3>
+                    <p>Stop wasting leftover food. Post surplus meals in seconds and let nearby NGOs collect them before
+                        they expire.</p>
+                    <ul class="audience-features">
+                        <li>✓ Post surplus food in under a minute</li>
+                        <li>✓ Track all your past donations</li>
+                        <li>✓ Build your brand as a responsible business</li>
+                    </ul>
+                    <a href="/templates/register.html" class="btn btn-primary">Register as Restaurant</a>
+                </div>
+                <div class="audience-card audience-ngo">
+                    <div class="audience-icon">💚</div>
+                    <h3>For NGOs</h3>
+                    <p>Find available surplus food from restaurants near you and connect directly to arrange collection.
+                    </p>
+                    <ul class="audience-features">
+                        <li>✓ See real-time food availability</li>
+                        <li>✓ Filter by your city automatically</li>
+                        <li>✓ Direct restaurant contact details</li>
+                    </ul>
+                    <a href="/templates/register.html" class="btn btn-outline">Register as NGO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-orb"></div>
+                <div class="cta-content">
+                    <h2>Ready to Make a Difference?</h2>
+                    <p>Join hundreds of restaurants and NGOs already using FoodShare to fight hunger.</p>
+                    <a href="/templates/register.html" class="btn btn-primary btn-lg">Start Today — It's Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-name">FoodShare</div>
+                    <p>Connecting restaurants with NGOs to reduce food waste and fight hunger across India.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-links-col">
+                        <h4>Navigate</h4>
+                        <a href="/templates/home.html">Home</a>
+                        <a href="/about.html">About Us</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Account</h4>
+                        <a href="/templates/login.html">Login</a>
+                        <a href="/templates/register.html">Register</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Legal</h4>
+                        <a href="/templates/privacy.html">Privacy Policy</a>
+                        <a href="/templates/terms.html">Terms of Service</a>
+                        <a href="/templates/help.html">Help Centre</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <p>Made with ❤️ to fight hunger in India</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 
 </html>

@@ -4,56 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodShare - Login</title>
-    <link rel="stylesheet" href="../static/login.css">
+    <meta name="description" content="Login to FoodShare — Connect restaurants and NGOs to fight food waste.">
+    <title>FoodShare — Login</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/login.css">
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p>
-            </div>
-            <nav class="center-nav">
-                <ul class="header-links">
-                    <li><a href="home.html" class="btn">Home</a></li> <!-- Updated Home button to look like the login button -->
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="auth-page">
 
-    <!-- Login Container -->
-    <div class="login-container">
-        <h2>Login to FoodShare</h2>
-        <form action="/api/login" method="POST" id="loginForm">
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-actions">
+                <a href="/templates/home.html" class="btn btn-ghost btn-sm">← Home</a>
+                <a href="/templates/register.html" class="btn btn-primary btn-sm">Register</a>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+    </nav>
+
+    <!-- Auth Layout -->
+    <div class="auth-layout">
+
+        <!-- Left Panel -->
+        <div class="auth-panel-left">
+            <div class="auth-left-content">
+                <div class="auth-left-badge">Welcome back 👋</div>
+                <h2>Good to see<br>you again</h2>
+                <p>Log in to access your dashboard and manage food donations or discover available meals.</p>
+                <div class="auth-feature-list">
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">🍱</span>
+                        <div>
+                            <strong>Manage Donations</strong>
+                            <p>Post and track your restaurant's surplus food</p>
+                        </div>
+                    </div>
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">🔔</span>
+                        <div>
+                            <strong>Instant Discovery</strong>
+                            <p>NGOs see available food posts in real-time</p>
+                        </div>
+                    </div>
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">🌍</span>
+                        <div>
+                            <strong>City-Based Matching</strong>
+                            <p>Only see posts relevant to your area</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn">Login</button>
-            <p>Don't have an account? <a href="register.html">Register here</a></p>
-        </form>
+        </div>
+
+        <!-- Right Panel (Form) -->
+        <div class="auth-panel-right">
+            <div class="auth-form-card">
+                <div class="auth-form-header">
+                    <h2>Sign In</h2>
+                    <p>Enter your credentials to continue</p>
+                </div>
+
+                <div id="loginError" class="alert alert-error" style="display:none">
+                    <span>⚠️</span>
+                    <span id="loginErrorMsg">Invalid email or password.</span>
+                </div>
+
+                <form action="/api/login" method="POST" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com"
+                            required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-password-wrap">
+                            <input type="password" id="password" name="password" class="form-input"
+                                placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="toggle-pw" id="togglePw" title="Show/hide password">👁</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                </form>
+
+                <div class="auth-separator"><span>or</span></div>
+                <p class="auth-switch">Don't have an account? <a href="register.html">Create one free</a></p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms and Conditions</a></li>
-            </ul>
-        </nav>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <div style="display:flex;gap:16px">
+                    <a href="privacy.html" style="color:var(--clr-text-dim);font-size:0.85rem">Privacy</a>
+                    <a href="terms.html" style="color:var(--clr-text-dim);font-size:0.85rem">Terms</a>
+                    <a href="help.html" style="color:var(--clr-text-dim);font-size:0.85rem">Help</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="../scripts/loginscript.js"></script>
+    <script src="/scripts/loginscript.js"></script>
+    <script>
+        document.getElementById('togglePw').addEventListener('click', function () {
+            const pw = document.getElementById('password');
+            pw.type = pw.type === 'password' ? 'text' : 'password';
+            this.textContent = pw.type === 'password' ? '👁' : '🙈';
+        });
+    </script>
 </body>
 
 </html>

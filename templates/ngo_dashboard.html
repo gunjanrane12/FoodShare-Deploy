@@ -4,59 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGO Dashboard</title>
-    <link rel="stylesheet" href="../static/ngo_dashboard.css"> <!-- Link to the updated CSS -->
+    <meta name="description" content="FoodShare NGO Dashboard — Discover available surplus food in your city.">
+    <title>NGO Dashboard — FoodShare</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/restaurant_dashboard.css">
+    <link rel="stylesheet" href="/static/ngo_dashboard.css">
 </head>
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p>
-            </div>
-            <div class="auth-buttons">
-                <button class="auth-button" onclick="window.location.href='home.html'">Home</button> <!-- Home button -->
-                <button class="auth-button" id="logoutButton">Logout</button> <!-- Logout button -->
+<body class="dashboard-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-actions">
+                <button class="btn btn-ghost btn-sm" id="logoutButton">Logout</button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content Section -->
-    <main>
-        <h1 id="welcomeMessage">Welcome, <span id="ngoName">NGO Name</span></h1> <!-- Dynamic NGO name -->
-
-        <h2>Available Food Posts</h2>
-        <div id="foodPostsOverview">
-            <!-- Food posts will be dynamically populated here -->
-        </div>
-
-        <!-- Modal for Posted By Details -->
-        <div id="detailsModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h4>Posted By Details</h4>
-                <div id="modalDetailsContent">
-                    <!-- Dynamic content will be inserted here -->
+    <!-- Dashboard Header -->
+    <div class="dashboard-hero">
+        <div class="container">
+            <div class="dashboard-hero-content">
+                <div class="dashboard-avatar dashboard-avatar-ngo">💚</div>
+                <div>
+                    <p class="dashboard-welcome">Welcome back,</p>
+                    <h1 id="ngoName">NGO</h1>
+                    <p class="dashboard-subtitle">Browse surplus food available in your city and connect with
+                        restaurants.</p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+        <div class="container">
+
+            <section class="dashboard-section">
+                <div class="section-row">
+                    <h2 class="section-title">Available Food Posts</h2>
+                    <span class="posts-count" id="postsCount"></span>
+                </div>
+                <div id="foodPostsOverview" class="posts-grid">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    <!-- Details Modal -->
+    <div id="detailsModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close close-button">✕</button>
+            <h3 style="margin-bottom:var(--space-5)">🏪 Restaurant Details</h3>
+            <div id="modalDetailsContent">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <div style="display:flex;gap:16px">
+                    <a href="privacy.html" style="color:var(--clr-text-dim);font-size:0.85rem">Privacy</a>
+                    <a href="terms.html" style="color:var(--clr-text-dim);font-size:0.85rem">Terms</a>
+                    <a href="contact.html" style="color:var(--clr-text-dim);font-size:0.85rem">Contact</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="/scripts/ngo_dashboard_script.js"></script> <!-- Updated script for toggle functionality -->
+    <script src="/scripts/ngo_dashboard_script.js"></script>
 </body>
 
 </html>

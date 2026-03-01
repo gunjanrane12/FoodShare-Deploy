@@ -1,54 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - FoodShare</title>
+    <meta name="description" content="Contact FoodShare — Get in touch with us for support or partnership inquiries.">
+    <title>Contact Us — FoodShare</title>
+    <link rel="stylesheet" href="/static/global.css">
     <link rel="stylesheet" href="/static/contact.css">
 </head>
+
 <body>
-    <!-- Wrapper for flexbox layout to push footer to the bottom -->
-    <div class="page-container">
-        <!-- Header Section -->
-        <header>
-            <div class="header-container">
-                <div class="logo-and-tagline">
-                    <h1 class="site-title">FoodShare</h1>
-                    <p class="tagline">Share Food, Share Hope</p> <!-- Tagline below logo -->
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-links">
+                <a href="/templates/home.html">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="active">Contact</a>
+            </div>
+            <div class="navbar-actions">
+                <a href="/templates/login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="/templates/register.html" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Banner -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="eyebrow">Get In Touch</div>
+            <h1>We'd Love to <span class="text-gradient">Hear From You</span></h1>
+            <p>Have questions, partnership ideas, or feedback? Reach out to our team and we'll get back to you promptly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Body -->
+    <section class="contact-body">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Info Cards -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p style="margin-bottom:var(--space-6)">Reach us through any of the channels below or send a message
+                        using the form.</p>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">🏛️</div>
+                        <div>
+                            <h4>Developer</h4>
+                            <p>Modern College of Engineering, Shivajinagar, Pune - 411005, Maharashtra</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📞</div>
+                        <div>
+                            <h4>Customer Care</h4>
+                            <p>+91 9876543210</p>
+                            <p style="font-size:0.8rem;margin-top:2px">Mon – Sat, 9am – 6pm IST</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">🛠️</div>
+                        <div>
+                            <h4>Admin / Technical</h4>
+                            <p>+91 9123456789</p>
+                            <p style="font-size:0.8rem;margin-top:2px">For technical issues and partnerships</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">✉️</div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>support@foodshare.in</p>
+                        </div>
+                    </div>
                 </div>
-                <nav class="header-nav">
-                    <a href="home.html" class="nav-link">Home</a> <!-- Link to Home page -->
-                    <a href="about.html" class="nav-link">About Us</a> <!-- Link to About Us page -->
-                </nav>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrap">
+                    <div class="contact-form-card">
+                        <h3>Send a Message</h3>
+                        <p style="margin-bottom:var(--space-6)">Fill out the form and our team will respond within 24
+                            hours.</p>
+                        <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="contact-form-row">
+                                <div class="form-group">
+                                    <label for="c-name">Your Name</label>
+                                    <input type="text" id="c-name" class="form-input" placeholder="Ravi Sharma"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-email">Email Address</label>
+                                    <input type="email" id="c-email" class="form-input" placeholder="you@example.com"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-subject">Subject</label>
+                                <input type="text" id="c-subject" class="form-input"
+                                    placeholder="e.g. Partnership enquiry" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-message">Message</label>
+                                <textarea id="c-message" class="form-textarea" placeholder="Tell us how we can help..."
+                                    rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Send Message 📨</button>
+                            <div id="contactSuccess" class="alert alert-success"
+                                style="display:none;margin-top:var(--space-4)">
+                                <span>✅</span> Thank you! We'll get back to you soon.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-        </header>
+        </div>
+    </section>
 
-        <!-- Contact Us Section -->
-        <section class="contact-section">
-            <h2>Contact Us</h2>
-            <div class="contact-details">
-                <p><strong>Developer Address:</strong></p>
-                <p>Modern College of Engineering, Pune</p>
-
-                <p><strong>Customer Care:</strong></p>
-                <p>Phone: +91-9876543210</p>
-
-                <p><strong>Admin:</strong></p>
-                <p>Phone: +91-9123456789</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-name">FoodShare</div>
+                    <p>Connecting restaurants with NGOs to reduce food waste and fight hunger.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-links-col">
+                        <h4>Navigate</h4>
+                        <a href="/templates/home.html">Home</a>
+                        <a href="/about.html">About Us</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4>Legal</h4>
+                        <a href="/templates/privacy.html">Privacy Policy</a>
+                        <a href="/templates/terms.html">Terms of Service</a>
+                        <a href="/templates/help.html">Help Centre</a>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li> <!-- Link to Privacy Policy page -->
-                <li><a href="terms-of-service.html">Terms of Service</a></li> <!-- Link to Terms of Service page -->
-                <li><a href="contact.html">Contact Us</a></li> <!-- Link to Contact Us page (current page) -->
-            </ul>
-        </nav>
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').style.display = 'flex';
+            e.target.reset();
+        }
+    </script>
 </body>
+
 </html>

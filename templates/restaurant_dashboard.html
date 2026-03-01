@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Dashboard</title>
-    <link rel="stylesheet" href="../static/restaurant_dashboard.css">
+    <meta name="description" content="FoodShare Restaurant Dashboard — Post and manage your food donations.">
+    <title>Restaurant Dashboard — FoodShare</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/restaurant_dashboard.css">
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p>
-            </div>
-            <div class="auth-buttons">
-                <button class="auth-button" onclick="window.location.href='home.html'">Home</button>
-                <button class="auth-button" id="logoutButton">Logout</button>
+
+<body class="dashboard-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-actions">
+                <a href="/templates/addpost.html" class="btn btn-primary btn-sm">+ Add Post</a>
+                <button class="btn btn-ghost btn-sm" id="logoutButton">Logout</button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <section>
-        <h1 id="welcomeMessage">Welcome, <span id="restaurantName">Restaurant Name</span></h1>
-        
-        <h2>Your Actions</h2>
-        <button onclick="window.location.href='addpost.html'">Add New Post</button>
-        
-        <h2>Your Past Posts</h2>
-        <div id="pastPostsOverview">
-            <!-- Past posts will be dynamically populated here -->
+    <!-- Dashboard Header -->
+    <div class="dashboard-hero">
+        <div class="container">
+            <div class="dashboard-hero-content">
+                <div class="dashboard-avatar">🏪</div>
+                <div>
+                    <p class="dashboard-welcome">Welcome back,</p>
+                    <h1 id="restaurantName">Restaurant</h1>
+                    <p class="dashboard-subtitle">Manage your food donations and help reduce food waste.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 FoodShare. All Rights Reserved.</p>
-        <nav>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+    <!-- Main -->
+    <main class="dashboard-main">
+        <div class="container">
+
+            <!-- Quick Actions -->
+            <section class="dashboard-section">
+                <div class="quick-actions-grid">
+                    <div class="quick-action-card" onclick="window.location.href='/templates/addpost.html'">
+                        <div class="qa-icon">📝</div>
+                        <div>
+                            <h3>Add Food Post</h3>
+                            <p>Share information about surplus meals available</p>
+                        </div>
+                        <span class="qa-arrow">→</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Past Posts -->
+            <section class="dashboard-section">
+                <div class="section-row">
+                    <h2 class="section-title">Your Posts</h2>
+                    <span class="posts-count" id="postsCount"></span>
+                </div>
+                <div id="pastPostsOverview" class="posts-grid">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <div style="display:flex;gap:16px">
+                    <a href="privacy.html" style="color:var(--clr-text-dim);font-size:0.85rem">Privacy</a>
+                    <a href="terms.html" style="color:var(--clr-text-dim);font-size:0.85rem">Terms</a>
+                    <a href="contact.html" style="color:var(--clr-text-dim);font-size:0.85rem">Contact</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="/scripts/restaurant_dashboard_script.js"></script>
 </body>
+
 </html>

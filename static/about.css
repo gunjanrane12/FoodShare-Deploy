@@ -1,144 +1,173 @@
-/* General Styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff; 
-    color: #333; 
-    line-height: 1.6;
-    height: 100%;
+/* =============================================
+   FoodShare — about.css
+   ============================================= */
+
+/* ------- About Hero ------- */
+.about-hero {
+    position: relative;
+    padding: var(--space-9) 0 var(--space-8);
+    overflow: hidden;
 }
 
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0F0F13 0%, #1A0A2E 60%, #0F1F2E 100%);
+    z-index: 0;
+}
 
-body {
+.about-hero-bg::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    animation: slideUp 0.7s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+.about-hero-content .eyebrow {
+    margin-bottom: var(--space-4);
+}
+
+.about-hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-5);
+    line-height: 1.15;
+}
+
+.about-hero-desc {
+    font-size: 1.1rem;
+    max-width: 560px;
+    color: var(--clr-text-muted);
+}
+
+/* ------- Mission Section ------- */
+.mission-section {
+    padding: var(--space-9) 0;
+    background: var(--clr-bg);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.mission-text .eyebrow {
+    margin-bottom: var(--space-4);
+}
+
+.mission-text h2 {
+    margin-bottom: var(--space-5);
+}
+
+.mission-text p {
+    margin-bottom: var(--space-4);
+}
+
+.mission-stats {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    gap: var(--space-4);
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); 
-    padding: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.mission-stat-card {
+    background: var(--clr-bg-2);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+    transition: all var(--transition);
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.mission-stat-card:hover {
+    border-color: var(--clr-border-hover);
+    transform: translateX(6px);
 }
 
-/* Container for logo and tagline */
-.logo-tagline-container {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+.mission-stat-primary {
+    border-color: rgba(255, 107, 53, 0.35);
+    background: rgba(255, 107, 53, 0.06);
 }
 
-.site-title {
-    font-size: 36px;
-    color: #ffffff;
-    margin: 0;
+.mission-stat-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: var(--space-2);
 }
 
-.tagline {
-    font-size: 16px;
-    color: #FFAA30;
-    margin-top: 5px; 
+.mission-stat-label {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--clr-text-muted);
 }
 
-.header-nav {
-    margin-left: auto; 
+/* ------- Values Section ------- */
+.values-section {
+    padding: var(--space-9) 0;
+    background: var(--clr-bg-2);
 }
 
-.header-nav a {
-    background-color: #FFAA30; 
-    color: #3e3e3e;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    font-size: 16px;
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
 }
 
-.header-nav a:hover {
-    background-color: #FF8F00; 
-    transform: scale(1.05);
-}
-
-/* About Section Styles */
-.about-section {
-    padding: 40px 20px;
-    text-align: left; 
-    flex-grow: 1; 
-    background: url('../foodshare.jpg') no-repeat center center/cover; /* Background image matching Home page */
-}
-
-.about-section h2 {
-    font-size: 32px;
-    color: #FF8F00; 
-    margin-bottom: 20px;
-}
-
-.about-section p {
-    font-size: 18px;
-    color: #151111;
-    margin-bottom: 20px;
-    /*background: rgba(27, 19, 19, 0.8); /* Light background behind text for readability */
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Footer Section */
-footer {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9); /* Deep Green to Sage Green */
-    color: #ffffff;
-    padding: 20px 0;
+.value-card {
+    background: var(--clr-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-7) var(--space-6);
     text-align: center;
-    width: 100%;
-    margin-top: auto; /* Sticky footer */
+    transition: all var(--transition);
 }
 
-footer p {
-    margin: 5px 0;
+.value-card:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow-primary);
 }
 
-footer nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+    display: block;
 }
 
-footer nav ul li {
-    margin: 0 10px;
+.value-card h3 {
+    margin-bottom: var(--space-3);
 }
 
-footer nav ul li a {
-    color: #FFAA30; /* Warm Amber */
-    text-decoration: none;
+/* ------- About CTA ------- */
+.about-cta {
+    padding: var(--space-9) 0;
+    background: var(--clr-bg);
 }
 
-footer nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Media Queries for Responsiveness */
+/* ------- Responsive ------- */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
+    .mission-grid {
+        grid-template-columns: 1fr;
     }
 
-    .about-section h2 {
-        font-size: 28px;
-    }
-
-    .about-section p {
-        font-size: 16px;
+    .values-grid {
+        grid-template-columns: 1fr;
     }
 }

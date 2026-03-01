@@ -1,212 +1,359 @@
-/* General Styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
-    height: 100%;
-}
+/* =============================================
+   FoodShare — restaurant_dashboard.css + ngo_dashboard.css (shared dashboard styles)
+   ============================================= */
 
-/* Header Styles */
-header {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9);
-    padding: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position:fixed;
-    top:0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.header-container {
+.dashboard-page {
+    background: var(--clr-bg);
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* ------- Dashboard Hero ------- */
+.dashboard-hero {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.12) 0%, rgba(255, 60, 172, 0.06) 50%, transparent 100%);
+    border-bottom: 1px solid var(--clr-border);
+    padding: var(--space-7) 0;
+}
+
+.dashboard-hero-content {
+    display: flex;
     align-items: center;
-    padding-right: 20px;
+    gap: var(--space-5);
 }
 
-.logo h1 {
-    font-size: 36px;
-    color: #ffffff;
-    margin: 0;
-}
-
-.logo p {
-    font-size: 14px;
-    color: #FFAA30;
-    margin: 0;
-}
-
-/* Navigation Button Styles */
-.auth-buttons {
+.dashboard-avatar {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 60, 172, 0.1) 100%);
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    border-radius: 20px;
     display: flex;
-    gap: 15px;
-}
-
-.auth-button {
-    background-color: #FFAA30;
-    color: #3e3e3e;
-    border: none;
-    padding: 12px 25px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
-}
-
-.auth-button:hover {
-    background-color: #FF8F00;
-    transform: scale(1.05);
-}
-
-/* Main Section */
-section {
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #FFAA30;
-    color: #3e3e3e;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #FF8F00;
-}
-
-/* Footer Styles */
-footer {
-    background: linear-gradient(to right, #2C6E49, #A8D8B9);
-    color: #ffffff;
-    text-align: center;
-    /* padding: 20px 0; */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
 }
 
-footer nav ul li {
-    margin: 0 10px;
+.dashboard-avatar-ngo {
+    background: linear-gradient(135deg, rgba(46, 196, 182, 0.2) 0%, rgba(91, 140, 255, 0.1) 100%);
+    border-color: rgba(46, 196, 182, 0.3);
 }
 
-footer nav ul li a {
-    color: #FFAA30;
-    text-decoration: none;
+.dashboard-welcome {
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
 }
 
-footer nav ul li a:hover {
-    text-decoration: underline;
+.dashboard-hero h1 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: var(--space-2);
 }
 
-#pastPostsOverview {
-    padding-bottom: 120px; /* Match this with the height of the footer */
+.dashboard-subtitle {
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+    margin: 0;
 }
 
-/* Main Content Section */
-section {
-    padding: 20px;
-    padding-top: 140px; /* Account for fixed header */
-    padding-bottom: 120px; /* Account for fixed footer */
-    text-align: center;
-    background-color: #f5f5f5; /* Light background for better contrast */
+/* ------- Dashboard Main ------- */
+.dashboard-main {
+    flex: 1;
+    padding: var(--space-7) 0;
 }
 
-/* Post Cards Layout */
-#pastPostsOverview {
-    display: grid; /* Using grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between posts */
-    padding-bottom: 120px;
+.dashboard-section {
+    margin-bottom: var(--space-8);
 }
 
-/* Individual Post Card */
-.post-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
 }
 
-/* Post Card Hover Effect */
-.post-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+.section-title {
+    font-size: 1.4rem;
+    flex: 1;
 }
 
-/* Post Title */
-.post-card h3 {
-    font-size: 24px;
-    color: #2C6E49; /* Consistent brand color */
-    margin-bottom: 10px;
+.posts-count {
+    font-size: 0.82rem;
+    color: var(--clr-text-muted);
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
 }
 
-/* Post Description */
-.post-card p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 15px;
+/* ------- Quick Actions ------- */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
 }
 
-/* Button for Each Post */
-.post-card button {
-    background-color: #FFAA30;
-    color: #3e3e3e;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
+.quick-action-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: var(--clr-bg-2);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all var(--transition);
 }
 
-.post-card button:hover {
-    background-color: #FF8F00;
-    transform: scale(1.05); /* Slightly enlarges on hover */
+.quick-action-card:hover {
+    border-color: rgba(255, 107, 53, 0.4);
+    background: rgba(255, 107, 53, 0.06);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-#welcomeMessage {
-    font-size: 36px;
-    color: #2C6E49; /* Match brand colors */
-    font-weight: bold;
-    margin-bottom: 30px;
+.qa-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 107, 53, 0.12);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
 }
 
-#welcomeMessage span {
-    color: #FFAA30; /* Accent color for restaurant name */
+.quick-action-card>div {
+    flex: 1;
 }
 
-/* Reduce the Gap Between Header and Content */
-section {
-    padding: 20px;
-    padding-top: 100px; /* Reduced padding to bring the content closer to the fixed header */
-    padding-bottom: 120px; /* Maintain padding for the footer */
+.quick-action-card h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
 }
 
-/* Styling for the Restaurant Name in the Welcome Message */
-#welcomeMessage span {
-    color: #FFAA30; /* Highlight the restaurant name with a different color */
+.quick-action-card p {
+    font-size: 0.82rem;
+    color: var(--clr-text-muted);
+    margin: 0;
+}
+
+.qa-arrow {
+    color: var(--clr-primary);
+    font-size: 1.2rem;
+    transition: transform var(--transition);
+}
+
+.quick-action-card:hover .qa-arrow {
+    transform: translateX(4px);
+}
+
+/* ------- Posts Grid ------- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-5);
+}
+
+/* ------- Post Cards ------- */
+.post-card-item {
+    background: var(--clr-bg-2);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--grad-primary);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.post-card-item:hover {
+    border-color: var(--clr-border-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.post-card-item:hover::before {
+    opacity: 1;
+}
+
+.post-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.post-card-header h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.post-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.post-meta-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--clr-text-muted);
+}
+
+.post-meta-row span:first-child {
+    font-size: 1rem;
+}
+
+.post-card-actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+}
+
+/* ------- NGO Food Post Cards ------- */
+.food-post-card {
+    background: var(--clr-bg-2);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.food-post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--grad-accent);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.food-post-card:hover {
+    border-color: rgba(46, 196, 182, 0.3);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.food-post-card:hover::before {
+    opacity: 1;
+}
+
+.food-post-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-text);
+}
+
+.food-post-meta {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.food-meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.82rem;
+    color: var(--clr-text-muted);
+}
+
+.food-post-expiry {
+    font-size: 0.82rem;
+    color: var(--clr-warning);
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.food-post-actions {
+    margin-top: var(--space-2);
+}
+
+/* ------- Modal Improvements ------- */
+.modal-detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.modal-detail-row:last-child {
+    border-bottom: none;
+}
+
+.modal-detail-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(46, 196, 182, 0.12);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.modal-detail-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--clr-text-dim);
+    margin-bottom: 2px;
+}
+
+.modal-detail-value {
+    font-size: 0.92rem;
+    color: var(--clr-text);
+}
+
+/* ------- Responsive ------- */
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

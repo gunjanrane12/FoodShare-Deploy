@@ -1,96 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodShare - Register</title>
-    <link rel="stylesheet" href="../static/register.css">
+    <meta name="description" content="Create a FoodShare account — Join as a restaurant or NGO to fight food waste.">
+    <title>FoodShare — Register</title>
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="/static/register.css">
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>FoodShare</h1>
-                <p>Share Food, Share Hope</p> <!-- Tagline under FoodShare -->
-            </div>
-            <nav class="header-nav">
-                <button class="auth-button" onclick="window.location.href='home.html'">Home</button>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Registration Container -->
-    <div class="register-container">
-        <h2>Create Your Account</h2>
-        <form action="/api/register" method="POST" id="registerForm">
-            <div class="input-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+<body class="auth-page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/templates/home.html" class="navbar-brand">
+                <span class="brand-name">FoodShare</span>
+                <span class="brand-tagline">Share Food, Share Hope</span>
+            </a>
+            <div class="navbar-actions">
+                <a href="/templates/home.html" class="btn btn-ghost btn-sm">← Home</a>
+                <a href="/templates/login.html" class="btn btn-outline btn-sm">Login</a>
             </div>
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+    </nav>
+
+    <!-- Auth Layout -->
+    <div class="auth-layout">
+
+        <!-- Left Panel -->
+        <div class="auth-panel-left">
+            <div class="auth-left-content">
+                <div class="auth-left-badge">Join the movement 🌱</div>
+                <h2>Start sharing<br>meals today</h2>
+                <p>Create your free account and become part of a growing community fighting food waste and hunger across
+                    India.</p>
+                <div class="auth-feature-list">
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">🏪</span>
+                        <div>
+                            <strong>Restaurants</strong>
+                            <p>Post surplus food in seconds, track all donations</p>
+                        </div>
+                    </div>
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">💚</span>
+                        <div>
+                            <strong>NGOs & Charities</strong>
+                            <p>Discover nearby food posts and contact restaurants directly</p>
+                        </div>
+                    </div>
+                    <div class="auth-feature">
+                        <span class="auth-feature-icon">🔒</span>
+                        <div>
+                            <strong>Secure & Free</strong>
+                            <p>Always free to use, data protected and encrypted</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+        </div>
+
+        <!-- Right Panel (Form) -->
+        <div class="auth-panel-right">
+            <div class="auth-form-card register-form-card">
+                <div class="auth-form-header">
+                    <h2>Create Account</h2>
+                    <p>Fill in your details to get started</p>
+                </div>
+
+                <form action="/api/register" method="POST" id="registerForm">
+
+                    <!-- Role Selection -->
+                    <div class="form-group">
+                        <label>I am registering as a:</label>
+                        <div class="role-toggle">
+                            <div class="role-card">
+                                <input type="radio" name="role" id="role-restaurant" value="restaurant" required>
+                                <label class="role-label" for="role-restaurant">
+                                    <span class="role-emoji">🏪</span>
+                                    <span class="role-name">Restaurant</span>
+                                    <span class="role-desc">I have surplus food to donate</span>
+                                </label>
+                            </div>
+                            <div class="role-card">
+                                <input type="radio" name="role" id="role-ngo" value="ngo">
+                                <label class="role-label" for="role-ngo">
+                                    <span class="role-emoji">💚</span>
+                                    <span class="role-name">NGO</span>
+                                    <span class="role-desc">I distribute food to those in need</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="register-fields-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name / Organisation Name</label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="e.g. Ravi's Kitchen" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="tel" id="mobile" name="mobile" class="form-input" placeholder="+91 98765 43210"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select id="city" name="city" class="form-select" required>
+                                <option value="" disabled selected>Select your city</option>
+                                <option>Agra</option>
+                                <option>Ahmedabad</option>
+                                <option>Bangalore</option>
+                                <option>Bhopal</option>
+                                <option>Chennai</option>
+                                <option>Coimbatore</option>
+                                <option>Delhi</option>
+                                <option>Hyderabad</option>
+                                <option>Indore</option>
+                                <option>Jaipur</option>
+                                <option>Kanpur</option>
+                                <option>Kolkata</option>
+                                <option>Lucknow</option>
+                                <option>Madurai</option>
+                                <option>Mumbai</option>
+                                <option>Nagpur</option>
+                                <option>Nashik</option>
+                                <option>Patna</option>
+                                <option>Pune</option>
+                                <option>Surat</option>
+                                <option>Thane</option>
+                                <option>Vadodara</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Detailed Address</label>
+                        <textarea id="address" name="address" class="form-textarea"
+                            placeholder="Street, Area, Landmark..." required rows="2"></textarea>
+                    </div>
+
+                    <div class="register-fields-grid">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-password-wrap">
+                                <input type="password" id="password" name="password" class="form-input"
+                                    placeholder="Create a password" required>
+                                <button type="button" class="toggle-pw" id="togglePw">👁</button>
+                            </div>
+                            <div class="pw-strength-bar" id="pwStrength">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <div class="input-password-wrap">
+                                <input type="password" id="confirm-password" name="confirm-password" class="form-input"
+                                    placeholder="Repeat password" required>
+                            </div>
+                            <div class="pw-match-msg" id="pwMatchMsg"></div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Create My Account</button>
+                </form>
+
+                <div class="auth-separator"><span>or</span></div>
+                <p class="auth-switch">Already have an account? <a href="login.html">Sign in here</a></p>
             </div>
-            <div class="input-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-            </div>
-            <div class="input-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
-            </div>
-            <div class="input-group">
-                <label for="city">City</label>
-                <select id="city" name="city" required>
-                    <option value="" disabled selected>Select your city</option>
-                    <option value="Agra">Agra</option>
-                    <option value="Ahmedabad">Ahmedabad</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Bhopal">Bhopal</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Coimbatore">Coimbatore</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Indore">Indore</option>
-                    <option value="Jaipur">Jaipur</option>
-                    <option value="Kanpur">Kanpur</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Lucknow">Lucknow</option>
-                    <option value="Madurai">Madurai</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Nagpur">Nagpur</option>
-                    <option value="Nashik">Nashik</option>
-                    <option value="Patna">Patna</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Surat">Surat</option>
-                    <option value="Thane">Thane</option>
-                    <option value="Vadodara">Vadodara</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label for="address">Detailed Address</label>
-                <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
-            </div>
-            <div class="input-group">
-                <label for="role">I am a:</label>
-                <select id="role" name="role" required>
-                    <option value="" disabled selected>Select your role</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="ngo">NGO</option>
-                </select>
-            </div>
-            <button type="submit" class="btn">Register</button>
-            <p>Already have an account? <a href="login.html">Login here</a></p>
-        </form>
+        </div>
+
     </div>
 
-    <!-- Link to JavaScript -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>© 2024 FoodShare. All Rights Reserved.</p>
+                <div style="display:flex;gap:16px">
+                    <a href="privacy.html" style="color:var(--clr-text-dim);font-size:0.85rem">Privacy</a>
+                    <a href="terms.html" style="color:var(--clr-text-dim);font-size:0.85rem">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="/scripts/registerscript.js"></script>
+    <script>
+        // Password toggle
+        document.getElementById('togglePw').addEventListener('click', function () {
+            const pw = document.getElementById('password');
+            pw.type = pw.type === 'password' ? 'text' : 'password';
+            this.textContent = pw.type === 'password' ? '👁' : '🙈';
+        });
+
+        // Password strength
+        document.getElementById('password').addEventListener('input', function () {
+            const val = this.value;
+            const bar = document.getElementById('pwStrength');
+            let strength = 0;
+            if (val.length >= 6) strength++;
+            if (val.match(/[A-Z]/)) strength++;
+            if (val.match(/[0-9]/)) strength++;
+            if (val.match(/[^A-Za-z0-9]/)) strength++;
+            bar.className = 'pw-strength-bar ' + ['', 'weak', 'fair', 'good', 'strong'][strength];
+        });
+
+        // Password match
+        document.getElementById('confirm-password').addEventListener('input', function () {
+            const pw = document.getElementById('password').value;
+            const msg = document.getElementById('pwMatchMsg');
+            if (this.value === '') { msg.textContent = ''; return; }
+            if (this.value === pw) {
+                msg.textContent = '✓ Passwords match';
+                msg.style.color = 'var(--clr-success)';
+            } else {
+                msg.textContent = '✗ Passwords do not match';
+                msg.style.color = 'var(--clr-danger)';
+            }
+        });
+    </script>
 </body>
+
 </html>
